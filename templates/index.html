@@ -1,0 +1,86 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> Predict Liver Disease</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            function predict(){
+                url="http://localhost:8000/predict?age="+$("age").val()+
+                "&tot_bilirubin=" + $("#tot_bilirubin").val()+
+                "&direct_bilirubin=" + $("#direct_bilirubin").val()+
+                "&tot_protein=" + $("#tot_protein").val()+
+                "&albumin=" + $("#albumin").val()+
+                "&ag_ration=" + $("#ag_ratio").val()+
+                "&sgpt=" + $("#sgpt").val()+
+                "&sgot=" + $("#sgot").val()+
+                "&alkphos=" + $("#alkphos").val()+
+                "&gender_n=" + $("#gender_n").val();
+                $.get(url,
+                null,
+                function(result){
+                    $("#chances").text(result);
+                }
+                );
+            }
+        </script>
+    </head>
+    <body>
+        <h1> Predict Liver Disease</h1>
+        age <br/>
+        <input type="number" id="age"/>
+        <p></p>
+
+        tot_bilirubin <br/>
+        <input type="number" id="tot_bilirubin"/>
+        <p></p>
+
+        direct_bilirubin <br/>
+        <input type="number" id="direct_bilirubin"/>
+        <p></p>
+
+        tot_protein <br/>
+        <input type="number" id="tot_protein"/>
+        <p></p>
+
+        albumin <br/>
+        <input type="number" id="albumin"/>
+        <p></p>
+
+        ag_ration <br/>
+        <input type="number" id="ag_ration"/>
+        <p></p>
+
+        sgot <br/>
+        <input type="number" id="sgot"/>
+        <p></p>
+
+        alkphos <br/>
+        <input type="number" id="alkphos"/>
+        <p></p>
+
+        <button onclick="predict()">predict</button>
+        <h2 id="chances"></h2>
+    </body>
+</html>
+
+
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="yellow">
+    <form action="predict">
+        Enter age : <input type="text" name="age"><br>
+        Enter Total Bilurubin : <input type="text" name="tot_bilirubin"><br>
+        Enter Direct Bilurubin : <input type="text" name="direct_bilirubin"><br>
+        Enter Total Protein : <input type="text" name="tot_proteins"><br>
+        Enter Albumin : <input type="text" name="albumin"><br>
+        Enter Age Ratio : <input type="text" name="ag_ratio"><br>
+        Enter SGOT : <input type="text" name="sgot"><br>
+        Enter Alkphos : <input type="text" name="alkphos"><br>
+        <input type="submit">
+    </form>
+</body>
